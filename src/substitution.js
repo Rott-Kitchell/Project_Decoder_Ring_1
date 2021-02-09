@@ -13,8 +13,6 @@ let cypher = [];
     let checkforDupes = new Set(alphabet)
     if ([...checkforDupes].length !== 26) return false;
     alphabet.split('');
-    console.log(alphabet)
-    console.log(theRealAlphabet)
     if (encode) {
       for (let i = 0; i < 25; i++) {
         cypher[theRealAlphabet[i]] =  alphabet[i]
@@ -24,15 +22,10 @@ let cypher = [];
         cypher[alphabet[i]] =  theRealAlphabet[i]
       }
     }
-    console.log(cypher)
     let answer = input.toLowerCase().split("").map((letter) => {
-      console.log(letter)
       if (letter === " ") return " ";
-
-      console.log(cypher[letter]);
       return cypher[letter]
     })
-    console.log(answer.join(''))
     return answer.join('')
   }
   return {
